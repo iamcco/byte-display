@@ -53,12 +53,12 @@ export class ByteDisplay {
   ) {
     for (let h = 0; h < height; h += 1) {
       const pY = y + h
-      if (pY > this.height) {
+      if (pY > (this.height - 1) || pY < 0) {
         continue
       }
       for (let w = 0; w < width; w += 1) {
         const pX = x + w
-        if (pX > this.width) {
+        if (pX > (this.width - 1) || pX < 0) {
           continue
         }
         ByteDisplay.setByPoint(pX, pY, this.width, this.height, this.buffer, w, h, width, height, data)

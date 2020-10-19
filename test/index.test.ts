@@ -5,11 +5,13 @@ const data = new Uint8Array([0x04, 0x80, 0x0e, 0xa0, 0x78, 0x90, 0x08, 0x90, 0x0
 
 const display = new ByteDisplay(64, 32)
 
-display.set(0, 0, 16, 16, data)
-display.set(48, 0, 16, 16, data)
+display.set(-8, 0, 16, 16, data)
+display.set(8, -8, 16, 16, data)
+display.set(24, -8, 16, 16, data)
+display.set(56, 0, 16, 16, data)
+display.set(8, 24, 16, 16, data)
+display.set(24, 24, 16, 16, data)
 display.set(24, 8, 16, 16, data)
-display.set(0, 16, 16, 16, data)
-display.set(48, 16, 16, 16, data)
 
 function print(buffer: Uint8Array | number[], width: number, height: number) {
   for(let j = 0; j < height; j += 1) {
